@@ -41,7 +41,7 @@ This guide has separate sections for different operating systems. Jump to the re
 **NOTE**: You are supposed to enter and run a command in a _terminal_ whenever you are given one, in this blog.
 
 A [Terminal](https://en.wikipedia.org/wiki/Terminal_emulator) generally refers to:
-- [Command Prompt](https://www.makeuseof.com/tag/a-beginners-guide-to-the-windows-command-line/) on Windows.</br>
+- [Command Prompt](https://www.makeuseof.com/tag/a-beginners-guide-to-the-windows-command-line/) on Windows.
 	Windows also has [Powershell](https://en.wikipedia.org/wiki/PowerShell) and the new [Windows Terminal](https://en.wikipedia.org/wiki/Windows_Terminal) which combines all the different [shell environments](https://en.wikipedia.org/wiki/Shell_(computing)).
 - Terminal on [MacOS](https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac#:~:text=On%20your%20Mac%2C%20do%20one,%2C%20then%20double%2Dclick%20Terminal.) and [Linux](https://www.geeksforgeeks.org/how-to-open-terminal-in-linux/).
 
@@ -125,7 +125,7 @@ gcc --version
 ```
 If you get some output; NOT error, then it is installed.
 
-On [Ubuntu](https://en.wikipedia.org/wiki/Ubuntu) and other Debian-based distributions:</br>
+On [Ubuntu](https://en.wikipedia.org/wiki/Ubuntu) and other Debian-based distributions:
 Run the following commands in the [Terminal](https://itsfoss.com/open-terminal-ubuntu/):
 ```sh
 sudo apt update
@@ -144,7 +144,7 @@ Though [GCC](https://gcc.gnu.org/) "_appears_" to be installed in MacOS by defau
 
 #### Why bother?
 
-For the audience one of the main drawbacks on using clang can be not able to use `<bits/stdc++. h>`, for your work.</br>
+For the audience one of the main drawbacks on using clang can be not able to use `<bits/stdc++. h>`, for your work.
 To know about the differences in-depth - refer:
 
 - [From perspective of Apple; the developers of Clang](https://opensource.apple.com/source/clang/clang-23/clang/tools/clang/www/comparison.html#gcc)
@@ -195,7 +195,7 @@ If you are using MacOS ventura and facing this issue - which means it's not fixe
 
 - https://github.com/Homebrew/homebrew-core/issues/113968
 
-**Yes. You are going to read all of that, try to understand; try to fix. Repeat until you succeed!**</br>
+**Yes. You are going to read all of that, try to understand; try to fix. Repeat until you succeed!**
 You have to start self-learning sometime later, why not start now?
 
 ***
@@ -240,6 +240,7 @@ Follow these steps to compile your `.c` file manually.
 	<img width="400" alt="image" src="https://user-images.githubusercontent.com/86282911/199403927-ff784c57-ccd4-4cd2-a07b-5e043f28c876.png">
 
 Once the extension is installed, creating or opening any `.c` or `.cpp` file will have syntax highlighting, code completion and other features.
+
 <img width="700" alt="image" src="https://user-images.githubusercontent.com/86282911/199404180-38e125a6-139a-42c8-bde2-b367d889440c.png">
 
 #### Compiling
@@ -275,7 +276,8 @@ To run the file:
 #### Code Runner
 
 For simplicity and automating a few steps for a list of languages you can try [code-runner](https://github.com/proffapt/code-runner).
-<img width="603" alt="image" src="https://user-images.githubusercontent.com/86282911/199088479-26cce835-c9bc-414d-9bc4-5de188145c92.png"></br>
+<img width="603" alt="image" src="https://user-images.githubusercontent.com/86282911/199088479-26cce835-c9bc-414d-9bc4-5de188145c92.png">
+
 Can help in following ways:
 - Just one command to compile and execute the compiled file: `run filneame.extension`.
 - Cleans compiled binary by default. So, that you don't submit binary instead of `.c` file in your assignments.
@@ -296,9 +298,10 @@ Rather read the documentation / help for that program or just simply search for 
 
 #### Learn to search!
 
-This is a starting guide, so it was a bit explanatory. What we promote is **self-learning**.</br>
+This is a starting guide, so it was a bit explanatory. What we promote is **self-learning**.
 The basic idea behind it is very simple:
 <img width="150" alt="image" align="right" src="https://user-images.githubusercontent.com/86282911/199060464-2dde3274-68dc-42e8-bc3d-e0e561d6e04b.png">
+
 1. Read the error carefully and try to understand it.
 2. Phrase your problem / goal.
 3. Search it on your favourite search engine **before asking in groups**.
