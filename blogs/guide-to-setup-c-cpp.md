@@ -19,7 +19,6 @@
 	- [Do NOT guess how a piece of software might work](#do-not-guess-how-a-piece-of-software-might-work)
 	- [Learn to search](#learn-to-search)
 - [Authors](#authors)
-</ul>
 
 ---
 
