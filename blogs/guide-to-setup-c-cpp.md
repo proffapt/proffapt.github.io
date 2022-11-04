@@ -1,8 +1,5 @@
 # Guide To Set Up C/C++
 
-<details open>
-<summary>Table of Contents</summary>
-
 - [How To Read This Guide](#how-to-read-this-guide)
 - [Windows](#windows)
 	- [Using MinGW Installer](#using-mingw-installer)
@@ -22,7 +19,9 @@
 	- [Do NOT guess how a piece of software might work](#do-not-guess-how-a-piece-of-software-might-work)
 	- [Learn to search](#learn-to-search)
 - [Authors](#authors)
-</details>
+</ul>
+
+---
 
 ### How To Read This Guide
 This guide is meant for beginners as well as readers with basic knowledge. Most of the technical terms have been explained or have been linked to a webpage with more information.
@@ -41,7 +40,7 @@ This guide has separate sections for different operating systems. Jump to the re
 **NOTE**: You are supposed to enter and run a command in a _terminal_ whenever you are given one, in this blog.
 
 A [Terminal](https://en.wikipedia.org/wiki/Terminal_emulator) generally refers to:
-- [Command Prompt](https://www.makeuseof.com/tag/a-beginners-guide-to-the-windows-command-line/) on Windows.
+- [Command Prompt](https://www.makeuseof.com/tag/a-beginners-guide-to-the-windows-command-line/) on Windows.<br>
 	Windows also has [Powershell](https://en.wikipedia.org/wiki/PowerShell) and the new [Windows Terminal](https://en.wikipedia.org/wiki/Windows_Terminal) which combines all the different [shell environments](https://en.wikipedia.org/wiki/Shell_(computing)).
 - Terminal on [MacOS](https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac#:~:text=On%20your%20Mac%2C%20do%20one,%2C%20then%20double%2Dclick%20Terminal.) and [Linux](https://www.geeksforgeeks.org/how-to-open-terminal-in-linux/).
 
@@ -125,7 +124,7 @@ gcc --version
 ```
 If you get some output; NOT error, then it is installed.
 
-On [Ubuntu](https://en.wikipedia.org/wiki/Ubuntu) and other Debian-based distributions:
+On [Ubuntu](https://en.wikipedia.org/wiki/Ubuntu) and other Debian-based distributions:<br>
 Run the following commands in the [Terminal](https://itsfoss.com/open-terminal-ubuntu/):
 ```sh
 sudo apt update
@@ -144,7 +143,7 @@ Though [GCC](https://gcc.gnu.org/) "_appears_" to be installed in MacOS by defau
 
 #### Why bother?
 
-For the audience one of the main drawbacks on using clang can be not able to use `<bits/stdc++. h>`, for your work.
+For the audience one of the main drawbacks on using clang can be not able to use `<bits/stdc++. h>`, for your work.<br>
 To know about the differences in-depth - refer:
 
 - [From perspective of Apple; the developers of Clang](https://opensource.apple.com/source/clang/clang-23/clang/tools/clang/www/comparison.html#gcc)
@@ -193,9 +192,9 @@ But if you want `gcc` to invoke GNU version of gcc instead of clang then execute
 
 If you are using MacOS ventura and facing this issue - which means it's not fixed yet - no problem, then read the following issue/discussion to solve it!
 
-- https://github.com/Homebrew/homebrew-core/issues/113968
+- [Homebrew-core-issue-113968](https://github.com/Homebrew/homebrew-core/issues/113968)
 
-**Yes. You are going to read all of that, try to understand; try to fix. Repeat until you succeed!**
+**Yes. You are going to read all of that, try to understand; try to fix. Repeat until you succeed!**<br>
 You have to start self-learning sometime later, why not start now?
 
 ***
@@ -298,7 +297,7 @@ Rather read the documentation / help for that program or just simply search for 
 
 #### Learn to search!
 
-This is a starting guide, so it was a bit explanatory. What we promote is **self-learning**.
+This is a starting guide, so it was a bit explanatory. What we promote is **self-learning**.<br>
 The basic idea behind it is very simple:
 <img width="150" alt="image" align="right" src="https://user-images.githubusercontent.com/86282911/199060464-2dde3274-68dc-42e8-bc3d-e0e561d6e04b.png">
 
