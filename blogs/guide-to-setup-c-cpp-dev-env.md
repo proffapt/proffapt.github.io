@@ -1,4 +1,4 @@
-# Guide To Set Up C/C++
+# Guide To Set Up C/C++ Dev Environment
 
 - [How To Read This Guide](#how-to-read-this-guide)
 - [Windows](#windows)
