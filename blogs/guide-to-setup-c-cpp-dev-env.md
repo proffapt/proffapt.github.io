@@ -14,13 +14,14 @@
 	- [Installing](#installing)
 	- [Compiling](#compiling)
 	- [Running](#running)
+	- [Code Runner](#code-runner)
+		- [Windows](#windows-11)
+		- [Linux and MacOS](#linux-and-macos)
 - [Tips and Further Reading](#tips-and-further-reading)
 	- [Code Runner](#code-runner)
 	- [Do NOT guess how a piece of software might work](#do-not-guess-how-a-piece-of-software-might-work)
 	- [Learn to search](#learn-to-search)
 - [Authors](#authors)
-
----
 
 ### How To Read This Guide
 This guide is meant for beginners as well as readers with basic knowledge. Most of the technical terms have been explained or have been linked to a webpage with more information.
@@ -39,7 +40,7 @@ This guide has separate sections for different operating systems. Jump to the re
 **NOTE**: You are supposed to enter and run a command in a _terminal_ whenever you are given one, in this blog.
 
 A [Terminal](https://en.wikipedia.org/wiki/Terminal_emulator) generally refers to:
-- [Command Prompt](https://www.makeuseof.com/tag/a-beginners-guide-to-the-windows-command-line/) on Windows.<br>
+- [Command Prompt](https://www.makeuseof.com/tag/a-beginners-guide-to-the-windows-command-line/) on Windows.
 	Windows also has [Powershell](https://en.wikipedia.org/wiki/PowerShell) and the new [Windows Terminal](https://en.wikipedia.org/wiki/Windows_Terminal) which combines all the different [shell environments](https://en.wikipedia.org/wiki/Shell_(computing)).
 - Terminal on [MacOS](https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac#:~:text=On%20your%20Mac%2C%20do%20one,%2C%20then%20double%2Dclick%20Terminal.) and [Linux](https://www.geeksforgeeks.org/how-to-open-terminal-in-linux/).
 
@@ -123,7 +124,7 @@ gcc --version
 ```
 If you get some output; NOT error, then it is installed.
 
-On [Ubuntu](https://en.wikipedia.org/wiki/Ubuntu) and other Debian-based distributions:<br>
+On [Ubuntu](https://en.wikipedia.org/wiki/Ubuntu) and other Debian-based distributions:
 Run the following commands in the [Terminal](https://itsfoss.com/open-terminal-ubuntu/):
 ```sh
 sudo apt update
@@ -142,7 +143,7 @@ Though [GCC](https://gcc.gnu.org/) "_appears_" to be installed in MacOS by defau
 
 #### Why bother?
 
-For the audience one of the main drawbacks on using clang can be not able to use `<bits/stdc++. h>`, for your work.<br>
+For the audience one of the main drawbacks on using clang can be not able to use `<bits/stdc++. h>`, for your work.
 To know about the differences in-depth - refer:
 
 - [From perspective of Apple; the developers of Clang](https://opensource.apple.com/source/clang/clang-23/clang/tools/clang/www/comparison.html#gcc)
@@ -191,9 +192,9 @@ But if you want `gcc` to invoke GNU version of gcc instead of clang then execute
 
 If you are using MacOS ventura and facing this issue - which means it's not fixed yet - no problem, then read the following issue/discussion to solve it!
 
-- [Homebrew-core-issue-113968](https://github.com/Homebrew/homebrew-core/issues/113968)
+- https://github.com/Homebrew/homebrew-core/issues/113968
 
-**Yes. You are going to read all of that, try to understand; try to fix. Repeat until you succeed!**<br>
+**Yes. You are going to read all of that, try to understand; try to fix. Repeat until you succeed!**
 You have to start self-learning sometime later, why not start now?
 
 ***
@@ -243,6 +244,7 @@ Once the extension is installed, creating or opening any `.c` or `.cpp` file wil
 
 #### Compiling
 In order to compile the code, open a file and run `Terminal > Build Task` from the main menu or press `Ctrl + Shift + B`.
+
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/86282911/199404707-95b1ad79-b55c-474f-b68c-4e782513a675.png">
 
 **On Windows**: From the dropdown, select `C/C++: g++.exe build active file`(for C++ files) or `C/C++: gcc.exe build active file`(for C files).
@@ -266,15 +268,34 @@ To run the file:
 
 3. The output of the code will be visible in the terminal!
 
-***
+### Code Runner
 
-### Tips and Further Reading
+Depending on your OS, we suggest different code runners. Hop into the section of your interest:
 
+- [Windows](#windows-11)
+- [Linux and Macos](#linux-and-macos)
 
-#### Code Runner
+#### Windows 11
+
+> You are suggested to use [code-runner](#linux-and-macos) using [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) instead of using this buggy `.run` extension which you will be installing in this section ahead - which is shared just as an alternative which is relatively easy to setup.
+
+1. Click on the extensions icon (<img width="20" alt="image" src="https://user-images.githubusercontent.com/86282911/201152366-5c50d509-8058-4e14-ac59-75697f2bcb30.png">).
+2. Search for `code runner`.
+3. Install the extension shown in the screenshot below.
+
+<img width="1283" alt="image" src="https://user-images.githubusercontent.com/86282911/201151700-83ac022a-0b7e-411a-9337-a8cf50f1f333.png">
+
+#### Linux and MacOS
 
 For simplicity and automating a few steps for a list of languages you can try [code-runner](https://github.com/proffapt/code-runner).
 <img width="603" alt="image" src="https://user-images.githubusercontent.com/86282911/199088479-26cce835-c9bc-414d-9bc4-5de188145c92.png">
+
+##### Installation
+
+Copy and paste the following command in your terminal and wait for the final message - you are done!
+```sh
+curl https://raw.githubusercontent.com/proffapt/code-runner/main/setup.sh | /bin/bash
+```
 
 Can help in following ways:
 - Just one command to compile and execute the compiled file: `run filneame.extension`.
@@ -287,6 +308,10 @@ Can help in following ways:
 
 > And many more, read the documntation and code for thorough understanding at https://github.com/proffapt/code-runner.
 
+***
+
+### Tips and Further Reading
+
 #### **DO NOT GUESS** how a piece of software might work.
 
 When using a tool for first time, you **CAN'T** and **MUSTN'T** guess how it works! Beginners often make this mistake and waste a lot of their time and of others too; without even searching or reading the docs!<br>
@@ -296,7 +321,7 @@ Rather read the documentation / help for that program or just simply search for 
 
 #### Learn to search!
 
-This is a starting guide, so it was a bit explanatory. What we promote is **self-learning**.<br>
+This is a starting guide, so it was a bit explanatory. What we promote is **self-learning**.
 The basic idea behind it is very simple:
 <img width="150" alt="image" align="right" src="https://user-images.githubusercontent.com/86282911/199060464-2dde3274-68dc-42e8-bc3d-e0e561d6e04b.png">
 
