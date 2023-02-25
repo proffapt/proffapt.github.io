@@ -1,6 +1,11 @@
+[^1]: It is the path to the `.pem` file which you downloaded just before deploying the VM.
+[^2]: Name to the user given while creatng the virtual machine.
+[^3]: Public IP address of the machine.
+[^4]: Path to the location where `.ovpn` files are stored on your remote server.
+
 # Setup OpenVPN Server on Azure
 
-- [Get AWS Azure](#step-1-get-aws-azure)
+- [Get Microsoft Azure](#step-1-get-microsoft-azure)
 - [Create an EC2 instance](#step-2-create-an-ec2-instance)
 - [SSH into the remote server](#step-3-ssh-into-the-remote-server)
 	- [Windows](#sshing-via-a-windows-machine)
@@ -16,11 +21,11 @@
 
 ***
 
-### Step 1: Get AWS Azure
+### Step 1: Get Microsoft Azure
 
 - Avail the [Github Student Developer Pack](https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education/github-global-campus-for-students/apply-to-github-global-campus-as-a-student#applying-to-github-global-campus). 
 - Now navigate to the benefits page and apply a filter for `cloud` or just [click here](https://education.github.com/pack/offers?sort=popularity&tag=Cloud). Follow the steps to sign up for Azure, and you will receive **$100 credits**.
-> **Note** Although, we could have done it directly via [Institute ID directly on AWS Azure](https://signup.azure.com/studentverification?offerType=1&correlationId=bd79ce7e43aa48319516e398c31f47bd). But the afore-mentioned method exposes you to various other possibilities which you might have not even thought of. We chose AWS azure here, if you want you can also choose DigitalOcean or any other cloud platform of your preference.
+> **Note** Although, we could have done it [directly using Institute ID on Microsoft Azure](https://signup.azure.com/studentverification?offerType=1&correlationId=bd79ce7e43aa48319516e398c31f47bd). But the afore-mentioned method exposes you to various other possibilities which you might have not even thought of. We chose Microsoft Azure here, if you want you can also choose DigitalOcean or any other cloud platform of your preference.
 
 ### Step 2: Create an EC2 instance
 
@@ -81,6 +86,7 @@ Click on the following links to read about the steps for the client of your inte
   ```ps
   ssh -i C:\path\to\privatekey user@host_address
   ```
+  > C:\path\to\privatekey[^1] • user[^2] • host_address[^3]
 
 #### SSHing via a Linux or MacOS machine
 
@@ -88,6 +94,8 @@ Click on the following links to read about the steps for the client of your inte
   ```sh
   ssh -i path/to/privatekey user@host_address
   ```
+  > path/to/privatekey[^1] • user[^2] • host_address[^3]
+  
 - Afore-mentioned method has a long command to type in, the recommended method will not be an alias but utilising somehing which SSH itself provides us.<br>
 We can add the config details to the ssh config file (`~/.ssh/config`).	The format is given below, replace the content inside `<_>` with your values and save it into the config file.<br>
 **Then you can ssh directly by using `ssh MyAzure`**.
@@ -103,8 +111,9 @@ We can add the config details to the ssh config file (`~/.ssh/config`).	The form
 > **Note** make sure you have set correct permissions on the private key or else you will get an error during ssh. You can fix this by changing the permissions using the following command:
 
 ```sh
-chmod 400 /path/to/privatekey
+chmod 400 path/to/privatekey
 ```
+> path/to/privatekey[^1]
 
 ### Step 4: Setup OpenVPN Access Server
 
@@ -188,9 +197,10 @@ Now we have to transfer he `.ovpn` files generaed on the remote server to our lo
 
 Run the following command, the key will be downloaded in `Downloads` directory.
 ```sh
-scp -i /path/to/privatekey <username>@<host>:/path/to/ovpn_file_on_remote_server ~/Downloads/
+scp -i path/to/privatekey user@<host_address:/path/to/ovpn_file ~/Downloads/
 ```
-> You can skip the -i (identity file) parameter if you have [added the ssh config earlier](#sshing-via-a-linux-or-macos-machine).
+> path/to/privatekey[^1] • user[^2] • host_address[^3] • /path/to/ovpn_file[^4]
+>> You can skip the -i (identity file) parameter if you have [added the ssh config earlier](#sshing-via-a-linux-or-macos-machine).
 
 To _start/stop/check_ status of open-vpn server use `systemctl`:
 ```sh
