@@ -1,7 +1,7 @@
 [^1]: It is the path to the `.pem` file which you downloaded just before deploying the VM.
 [^2]: Name to the user given while creatng the virtual machine.
 [^3]: Public IP address of the machine.
-[^4]: Path to the location where `.ovpn` files are stored on your remote server.
+[^4]: Name of the client you specified to the script.
 
 # Setup OpenVPN Server on Azure
 
@@ -190,16 +190,20 @@ After we have ssh'ed into the machine, we have to setup the OpenVPN Access Serve
   ```
 - Execute the following command
   ```sh
-  wget https://git.io/vpn -O openvpn-install.sh && bash openvpn-install.sh
+  wget https://git.io/vpn -O openvpn-install.sh && sudo bash openvpn-install.sh
   ```
   It will download and execute a script which automates openvpn server configuration.
 - Keep in mind to update following options during the setup process & leave the rest on their default state:
-  - `IP address`: Your Public IP for the azure machine.
-  - `PORT`: Enter  2 for __Custom Port__ and specify `443` as the cusom port
+  - `IP address`: Your _Public IP_ for the azure machine.
   - `UDP or TCP`: Enter 2 for __TCP__ as __UDP ports are blocked on campus network__.
-  - `DNS RESOLVER`: Enter 8 for Open DNS.
+  - `PORT`: __443__
+  - `DNS RESOLVER`: Enter 4 for __OpenDNS__.
   - `CLIENT`: One configuration for one client/device. Name it like pc, mobile etc.
-  - `PASSWORD`: Your choice to use either passwordless client or with password client.
+- The `.ovpn` file will be stored inside `/root` directory, copy it into your user's home directory using the following command
+  ```sh
+  sudo cp /root/client_name.ovpn ~/
+  ```
+  > client_name[^4]
 
 > **Note** Run the same script to generate new clients (you will need a unique client for each device that’s going to be connected to the VPN), i.e., __one `.ovpn` file one connection__.
 
@@ -290,9 +294,9 @@ Now we have to transfer he `.ovpn` files generaed on the remote server to our lo
 	
 Run the following command, the key will be downloaded in `Downloads` directory.
 ```sh
-scp -i path/to/privatekey user@host_address:/path/to/ovpn_file ~/Downloads/
+scp -i path/to/privatekey user@host_address:client_name.ovpn ~/Downloads/
 ```
-> path/to/privatekey[^1] • user[^2] • host_address[^3] • /path/to/ovpn_file[^4]
+> path/to/privatekey[^1] • user[^2] • host_address[^3] • client_name[^4]
 >> You can skip the -i (identity file) parameter if you have [added the ssh config earlier](#sshing-via-a-linux-or-macos-machine).
 </details>
 
@@ -303,9 +307,9 @@ scp -i path/to/privatekey user@host_address:/path/to/ovpn_file ~/Downloads/
 	
 Run the following command, the key will be downloaded in `Downloads` directory after you enter the correct password set by you earlier.
 ```sh
-scp user@host_address:/path/to/ovpn_file ~/Downloads/
+scp user@host_address:client_name.ovpn ~/Downloads/
 ```
-> user[^2] • host_address[^3] • /path/to/ovpn_file[^4]
+> user[^2] • host_address[^3] • client_name[^4]
 </details>
 
 To _start/stop/check_ status of open-vpn server use `systemctl`:
