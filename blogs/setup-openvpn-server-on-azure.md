@@ -275,8 +275,9 @@ Now we have to transfer he `.ovpn` files generaed on the remote server to our lo
     - `Host Name`: Your remote machine's Public IP address.
     - `Port`: 22 (Default).
     - `Username`: _Username_ which you set for the remote machine.
-    - `Password`: _Password_ which you set for the remote machine
+    - `Password`: _Password_ which you set for the remote machine<br>
       <img width="450" alt="image" src="https://user-images.githubusercontent.com/86282911/222964236-a165f125-4e32-4754-8752-9a01f948235e.png">
+	  
   - Press `Login` then `YES`.
   </details>
   
