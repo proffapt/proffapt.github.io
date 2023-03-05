@@ -45,15 +45,42 @@
     <img width="900" alt="image" src="https://user-images.githubusercontent.com/86282911/221342094-a3e467a1-3eba-4028-bb78-5defd6a6cb0d.png"><br>
     <img width="450" alt="image" src="https://user-images.githubusercontent.com/86282911/221342129-ca8773e2-6e37-409c-b958-b71f59ee12d8.png">
   
-  - Choose **HTTPS(443)** in `Select inbound ports`.<br>
-    <img width="450" alt="image" src="https://user-images.githubusercontent.com/86282911/221342161-4e366833-a82c-4cf7-9246-7220ab2465b8.png">
-  
-- Leave rest of the settings as default in other sections and click `Review+Create`.
-- Now you will be prompted to `Generate a new key pair`, select `Download privae key and create Resource`. This step will download a `.pem` file on to your local machine.<br>
-  <img width="450" alt="image" src="https://user-images.githubusercontent.com/86282911/221342181-ac62d29d-9727-4b57-a6c8-57082f2ce1e0.png"><br>
-  <img width="450" alt="image" src="https://user-images.githubusercontent.com/86282911/221342234-1336e5ec-5e9c-431e-9649-2bb1c5cb144f.png">
+  - Now choose an __Authentication method__ according to your preference.
+    - Using `ssh keys` is _more secure but hard to follow_.
+      <details>
+      <summary>
+	  Using SSH keys
+      </summary>
+	
+      - Select `SSH public key` as the Authentication Method and fill-in the required fields.<br>
+        <img width="450" alt="image" src="https://user-images.githubusercontent.com/86282911/222965735-37722163-583e-433b-8629-2a1ca65acebd.png">
 
-- Once the VM is deployed
+      - Choose **HTTPS(443)** in `Select inbound ports`.<br>
+        <img width="450" alt="image" src="https://user-images.githubusercontent.com/86282911/221342161-4e366833-a82c-4cf7-9246-7220ab2465b8.png">
+  
+      - Leave rest of the settings as default in other sections and click `Review+Create`.
+      - Now you will be prompted to `Generate a new key pair`, select `Download privae key and create Resource`. This step will download a `.pem` file on to your local machine.<br>
+        <img width="450" alt="image" src="https://user-images.githubusercontent.com/86282911/221342181-ac62d29d-9727-4b57-a6c8-57082f2ce1e0.png"><br>
+        <img width="450" alt="image" src="https://user-images.githubusercontent.com/86282911/221342234-1336e5ec-5e9c-431e-9649-2bb1c5cb144f.png">
+
+      </details>
+    - Using `password` is _easy to follow but less secure_.
+      <details>
+      <summary>
+	  Using password
+      </summary>
+	
+      - Select `Password` as the Authentication Method and fill-in the required fields.<br>
+        <img width="450" alt="image" src="https://user-images.githubusercontent.com/86282911/222967213-92d8fc30-153d-40dd-84b4-879a8c112a97.png">
+
+      - Choose **HTTPS(443)** in `Select inbound ports`.<br>
+        <img width="450" alt="image" src="https://user-images.githubusercontent.com/86282911/221342161-4e366833-a82c-4cf7-9246-7220ab2465b8.png">
+
+      - Leave rest of the settings as default in other sections and click `Review+Create`.
+      </details>
+
+
+- Now, wait for the VM to be deployed. Once the VM is deployed
   - Click `Goto Resource`.<br>
     <img width="420" alt="image" src="https://user-images.githubusercontent.com/86282911/221343236-d97058dd-587e-4703-911d-438eac1458ee.png">
 
@@ -83,20 +110,44 @@ Click on the following links to read about the steps for the client of your inte
   ```
   - Windows also has [Powershell](https://en.wikipedia.org/wiki/PowerShell) and the new [Windows Terminal](https://en.wikipedia.org/wiki/Windows_Terminal) which combines all the different [shell environments](https://en.wikipedia.org/wiki/Shell_(computing)). So, you can choose one from these as well, but it doesn't matter in this context.
 - Now `ssh` into the remote server
+  <details>
+  <summary>
+	Using SSH keys
+  </summary>
+	
   ```ps
   ssh -i C:\path\to\privatekey user@host_address
   ```
   > C:\path\to\privatekey[^1] • user[^2] • host_address[^3]
+  </details>
+  
+  <details>
+  <summary>
+	Using Password
+  </summary>
+	
+  ```ps
+  ssh user@host_address
+  ```
+  > user[^2] • host_address[^3]
+  </details>
 
 #### SSHing via a Linux or MacOS machine
 
-- You can ssh via the following command..
+- You can ssh via the following methods
+  <details>
+  <summary>
+	Using SSH keys
+  </summary>
+	
   ```sh
   ssh -i path/to/privatekey user@host_address
   ```
   > path/to/privatekey[^1] • user[^2] • host_address[^3]
-  
-- Afore-mentioned method has a long command to type in, the recommended method will not be an alias but utilising somehing which SSH itself provides us.<br>
+
+  > **Note**
+
+  Afore-mentioned method has a long command to type in, the recommended method will not be an alias but utilising somehing which SSH itself provides us.<br>
 We can add the config details to the ssh config file (`~/.ssh/config`).	The format is given below, replace the content inside `<_>` with your values and save it into the config file.<br>
 **Then you can ssh directly by using `ssh MyAzure`**.
 
@@ -108,12 +159,25 @@ We can add the config details to the ssh config file (`~/.ssh/config`).	The form
  	  IdentitiesOnly yes
   ```
 
-> **Note** make sure you have set correct permissions on the private key or else you will get an error during ssh. You can fix this by changing the permissions using the following command:
+  > **Note** make sure you have set correct permissions on the private key or else you will get an error during ssh. You can fix this by changing the permissions using the following command:
 
-```sh
-chmod 400 path/to/privatekey
-```
-> path/to/privatekey[^1]
+  ```sh
+  chmod 400 path/to/privatekey
+  ```
+  > path/to/privatekey[^1]
+	
+  </details>
+	
+  <details>
+  <summary>
+	Using Password
+  </summary>
+	
+  ```sh
+  ssh user@host_address
+  ```
+  > user[^2] • host_address[^3]
+  </details>
 
 ### Step 4: Setup OpenVPN Access Server
 
@@ -157,50 +221,92 @@ Now we have to transfer he `.ovpn` files generaed on the remote server to our lo
 - [Linux & MacOS](#linux--macos)
 
 #### Windows
-- [Download WinSCP](https://winscp.net/eng/download.php) a GUI windows implementation for `scp (secure copy)`.
-- [Download PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) for converting the `.pem` file to `.ppk` via __PuTTYgen__.
-- From the `Start menu`, choose `All Programs` > `PuTTY` > `PuTTYgen`.
-- Choose `Load`.<br>
-  <img width="450" alt="image" src="https://user-images.githubusercontent.com/86282911/221342564-7a3936fe-2d3e-4318-9529-5a4d9fdb95b4.png">
-
-- By default, PuTTYgen displays only files with the extension `.ppk`. To locate your `.pem` file, choose the option to display files of all types.<br>
-  <img width="300" alt="image" src="https://user-images.githubusercontent.com/86282911/221342654-fca0027b-1f83-4e7d-811c-78719137ce9f.png">
-  
-- Select your `.pem` file for the key pair that you specified when you launched your instance and choose `Open`. PuTTYgen displays a notice that the .pem file was successfully imported. Choose `OK`.<br>  
-  <img width="300" alt="image" src="https://user-images.githubusercontent.com/86282911/221342668-94223a8d-7e06-4927-873c-209aa4e1b794.png">
-- To save the key in the format that PuTTY can use, choose `Save private key`.<br>
-  <img width="300" alt="image" src="https://user-images.githubusercontent.com/86282911/221342698-93f3ef59-1175-48cc-bea4-67e163d2b36a.png">
-- PuTTYgen displays a warning about saving the key without a passphrase. Choose `Yes`.<br>
-  <img width="300" alt="image" src="https://user-images.githubusercontent.com/86282911/221342709-00472e3f-d94c-4681-8edb-af9b10ff7955.png">
-
-- Now with all of that done, open `WinSCP`
-- Click on `New Session` & enter the following configuration <br>
+- [Download WinSCP](https://winscp.net/eng/download.php) a GUI implementation for `scp (secure copy)` on windows. Open it.
+- Click on `New Session`<br>
   <img width="480" alt="image" src="https://user-images.githubusercontent.com/86282911/221348819-75807203-7b93-4eca-9095-0d6a76cd0fc8.png">
 
-  - `File Protocol`: _SCP_.
-  - `Host Name`: Your remote machine's Public IP address.
-  - `Port`: 22 (Default).
-  - `Username`: username which you set for the remote machine.<br>
-    <img width="450" alt="image" src="https://user-images.githubusercontent.com/86282911/221343071-51004b21-467d-4ad7-a422-06bb3112e61a.png">
+- Now refer to the procedure mentioned below based on your authentication method.
+  <details>
+  <summary>
+	Using SSH keys
+  </summary>
 
-  - Now navigate to `Advanced` > `Authentication`
+  - [Download PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) for converting the `.pem` file to `.ppk` via __PuTTYgen__. Open it.
+    - From the `Start menu`, choose `All Programs` > `PuTTY` > `PuTTYgen`.
+    - Choose `Load`.<br>
+      <img width="450" alt="image" src="https://user-images.githubusercontent.com/86282911/221342564-7a3936fe-2d3e-4318-9529-5a4d9fdb95b4.png">
+
+    - By default, PuTTYgen displays only files with the extension `.ppk`. To locate your `.pem` file, choose the option to display files of all types.<br>
+      <img width="300" alt="image" src="https://user-images.githubusercontent.com/86282911/221342654-fca0027b-1f83-4e7d-811c-78719137ce9f.png">
+  
+    - Select your `.pem` file for the key pair that you specified when you launched your instance and choose `Open`. PuTTYgen displays a notice that the .pem file was successfully imported. Choose `OK`.<br>  
+      <img width="300" alt="image" src="https://user-images.githubusercontent.com/86282911/221342668-94223a8d-7e06-4927-873c-209aa4e1b794.png">
+	
+    - To save the key in the format that PuTTY can use, choose `Save private key`.<br>
+      <img width="300" alt="image" src="https://user-images.githubusercontent.com/86282911/221342698-93f3ef59-1175-48cc-bea4-67e163d2b36a.png">
+	
+    - PuTTYgen displays a warning about saving the key without a passphrase. Choose `Yes`.<br>
+      <img width="300" alt="image" src="https://user-images.githubusercontent.com/86282911/221342709-00472e3f-d94c-4681-8edb-af9b10ff7955.png">
+	
+  - Now head back to the `WinSCP` window & enter the following login configuration
+    - `File Protocol`: _SCP_.
+    - `Host Name`: Your remote machine's Public IP address.
+    - `Port`: 22 (Default).
+    - `Username`: username which you set for the remote machine.<br>
+      <img width="450" alt="image" src="https://user-images.githubusercontent.com/86282911/221343071-51004b21-467d-4ad7-a422-06bb3112e61a.png">
+	
+  - Navigate to `Advanced` > `Authentication`
   - Browse and select your `.ppk` file.<br>
     <img width="450" alt="image" src="https://user-images.githubusercontent.com/86282911/221343115-b1f63903-5bb0-4416-a53d-9b706d4fd872.png">
-
+	
   - Press `OK` then `Login` & finally `YES`.
-  - Select and download all the `.ovpn` files you creaed which will be shown on the interface.<br>
-    <img width="180" alt="image" src="https://user-images.githubusercontent.com/86282911/221343162-03ed5396-6637-4ecb-9b21-433a3799bb1b.png">
+  </details>
+  <details>
+  <summary>
+   	Using Password
+  </summary>
 
-  - Now shutdown the `WinSCP session`
+  - Enter the following login configuration
+    - `File Protocol`: _SCP_.
+    - `Host Name`: Your remote machine's Public IP address.
+    - `Port`: 22 (Default).
+    - `Username`: _Username_ which you set for the remote machine.
+    - `Password`: _Password_ which you set for the remote machine
+      <img width="450" alt="image" src="https://user-images.githubusercontent.com/86282911/222964236-a165f125-4e32-4754-8752-9a01f948235e.png">
+  - Press `Login` then `YES`.
+  </details>
+  
+- Select and download all the `.ovpn` files you creaed which will be shown on the interface.<br>
+  <img width="180" alt="image" src="https://user-images.githubusercontent.com/86282911/221343162-03ed5396-6637-4ecb-9b21-433a3799bb1b.png">
+
+- Now shutdown the `WinSCP session`
 
 #### Linux & MacOS
 
+<details>
+<summary>
+	Using SSH keys
+</summary>
+	
 Run the following command, the key will be downloaded in `Downloads` directory.
 ```sh
-scp -i path/to/privatekey user@<host_address:/path/to/ovpn_file ~/Downloads/
+scp -i path/to/privatekey user@host_address:/path/to/ovpn_file ~/Downloads/
 ```
 > path/to/privatekey[^1] • user[^2] • host_address[^3] • /path/to/ovpn_file[^4]
 >> You can skip the -i (identity file) parameter if you have [added the ssh config earlier](#sshing-via-a-linux-or-macos-machine).
+</details>
+
+<details>
+<summary>
+	Using Password
+</summary>
+	
+Run the following command, the key will be downloaded in `Downloads` directory after you enter the correct password set by you earlier.
+```sh
+scp user@host_address:/path/to/ovpn_file ~/Downloads/
+```
+> user[^2] • host_address[^3] • /path/to/ovpn_file[^4]
+</details>
 
 To _start/stop/check_ status of open-vpn server use `systemctl`:
 ```sh
