@@ -2,25 +2,39 @@
  Download a DC++ Client, I recommend EiskaltDC++ for uniformity across platforms and avoiding confusion.<br>
 
 #### Windows
+
+1. [Download Eiskalt DC++](https://sourceforge.net/projects/eiskaltdcpp/files/Windows/).<br>
+   Go through the basic installation setup and install it.
+2. Open Eiskalt DC++ & press `ctrl + o`, key-combination to open its preferences window.
+3. `ctr+n` for quick connect
+
+Same for linux
+
 #### Linux
+
+1. Install dcpp on debian based
+   ```sh
+   sudo apt install eiskaltdcpp
+   ```
+
 #### MacOS
 	
 1. [Install Homebrew](https://brew.sh/) - _skip this step if already present_.
 	- To check whether it is installed or not, use the following command
-		```sh
-		command -v brew
-		```
+	  ```sh
+	  command -v brew
+	  ```
 
 	- If the output is like follwoing, then brew is installed!
-   		```sh
-    		~> command -v brew
-	    	/opt/homebrew/bin/brew
-    		```
+   	  ```sh
+	  ~> command -v brew
+	  /opt/homebrew/bin/brew
+	  ```
 
 2. Install Eiskalt DC++ using the following command
-		```sh
-		brew install eiskaltdcpp
-		```
+   ```sh
+   brew install eiskaltdcpp
+   ```
 
 3. Open Eiskalt DC++ & press `cmd + ,` key-combination to open its preferences window.
 
@@ -32,7 +46,10 @@
 
 6. In order to render the Welcome message aka `Message of The Day` properly we have to set any mono font for our client.<br>
 	To do so Goto `GUI` > `Fonts`, then select any __mono__ font available on your system.<br>
+	You will need to double click on the fonts to change them.<br>
 	<img width="700" alt="image" src="https://user-images.githubusercontent.com/86282911/223131317-2b5329b3-abda-48d3-b1bd-b0f531c4b841.png">
+
+# TOOD: Add a section about getting mono fonts somehow
 
 7. Now press `Ok`. 
 
@@ -44,3 +61,5 @@
 	<img width="700" alt="image" src="https://user-images.githubusercontent.com/86282911/223134018-c1f1c1f2-4272-4611-bc39-d62fe42cbd2a.png">
 
 ## How to share content
+
+<img width="1585" alt="image" src="https://user-images.githubusercontent.com/86282911/223491318-fd8db15a-04ed-464a-8c8f-69b4650087d1.png">
