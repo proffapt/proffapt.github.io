@@ -12,10 +12,10 @@
 		```
 
 	- If the output is like follwoing, then brew is installed!
-   	```sh
-    	~> command -v brew
-    	/opt/homebrew/bin/brew
-    	```
+   		```sh
+    		~> command -v brew
+	    	/opt/homebrew/bin/brew
+    		```
 
 2. Install Eiskalt DC++ using the following command
 		```sh
