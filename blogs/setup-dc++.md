@@ -100,6 +100,8 @@ sudo apt install eiskaltdcpp
 
    Enter the current IP for DC++. At the time of writing this blog it is `10.105.12.22`. Press `Ok`.<br>
 	<img width="300" alt="image" src="https://user-images.githubusercontent.com/86282911/223131882-7e86be2e-d96e-44e3-ad4b-bca4be98b621.png">
+   
+   > **Note** Refer [this page](https://wiki.metakgp.org/w/DC) for official updates on the Hub IP and MetaHub as a whole.
 
 8. You should now be connected to the hub and if the fonts are set properly you should see something like this. <br>
 	<img width="700" alt="image" src="https://user-images.githubusercontent.com/86282911/223134018-c1f1c1f2-4272-4611-bc39-d62fe42cbd2a.png">
