@@ -1,8 +1,8 @@
-[^1]: [Which campus has highest total share and users on DC++ in India?](https://www.quora.com/Which-campus-has-highest-total-share-and-users-on-DC++-in-India). Quora. Retrieved May 1, 2015.
+[^1]: [Which campus has the highest total share and users on DC++ in India?](https://www.quora.com/Which-campus-has-highest-total-share-and-users-on-DC++-in-India). Quora. Retrieved May 1, 2015.
 
 # DC++
 
-IIT Kharagpur __once had__ one of the largest DC ([Direct Connect](https://en.wikipedia.org/wiki/Advanced_Direct_Connect)) networks in India[^1]. It lost its glory when the pendamic hit and everything went online. This is an effort to restore that glory back, by educating students about "_How can one connect to the DC Hub properly_". Following is the structure of this documentation for a quick overview and easy navigation.
+IIT Kharagpur __once had__ one of the largest DC ([Direct Connect](https://en.wikipedia.org/wiki/Advanced_Direct_Connect)) networks in India[^1]. It lost its glory when the pandemic hit and everything went online. This is an effort to restore that glory, by educating students about "_How can one connect to the DC Hub properly_". Following is the structure of this documentation for a quick overview and easy navigation.
 
 - [Installing the client](#installing-the-client)
   - [Windows](#windows)
@@ -19,7 +19,7 @@ IIT Kharagpur __once had__ one of the largest DC ([Direct Connect](https://en.wi
 
 ## Installing the client
 
-The IITKGP DC Hub is a private hub and inaccessible from outside the IIT Kharagpur's network. Users connect to hubs using DC clients, and are able to share files with each other at high speeds. The most popular hub is [HiT Hi FiT Hai](https://wiki.metakgp.org/w/HiT_Hi_FiT_Hai).<br>
+The IITKGP DC Hub is a private hub and inaccessible from outside the IIT Kharagpur network. Users connect to hubs using DC clients and can share files at high speeds. The most popular hub is [HiT Hi FiT Hai](https://wiki.metakgp.org/w/HiT_Hi_FiT_Hai).<br>
 There are various DC clients available for different platforms. To name a few, we have<br>
 |Platforns|Client(s)|
 |---------|---------|
@@ -27,8 +27,8 @@ There are various DC clients available for different platforms. To name a few, w
 |Linux|[EiskaltDC++](https://sourceforge.net/projects/eiskaltdcpp/files/Linux/), [LinuxDC++](https://linux.softpedia.com/get/Communications/Filesharing/LinuxDCplusplus-16399.shtml), [ncdc](https://dev.yorhel.nl/ncdc)|
 |MacOS|[EiskaltDC++](https://sourceforge.net/projects/eiskaltdcpp/files/macOS/EiskaltDC%2B%2B-2.4.2-x86_64.dmg/download), [Shakespeer](https://sourceforge.net/projects/shakespeer/), [ncdc](https://saiankit.medium.com/how-to-use-dc-on-mac-using-ncdc-50bcc78aad01)|
    
-However, it is recommend to use [Eiskalt DC++](https://sourceforge.net/projects/eiskaltdcpp/files) for uniformity across different platforms.<br>
-To install EiskaltDC++ on your platform of interest refer the following links:
+However, it is recommended to use [Eiskalt DC++](https://sourceforge.net/projects/eiskaltdcpp/files) for uniformity across different platforms.<br>
+To install EiskaltDC++ on your platform of interest refer to the following links:
 - [Windows](#windows)
 - [Linux](#linux)
 - [MacOS](#macos)
@@ -44,7 +44,7 @@ Install Eiskalt DC++ on __debian based distros__ like - _ubuntu, linux mint etc_
 ```sh
 sudo apt install eiskaltdcpp
 ```
-> **Note** If you are not on debian based distro, search for the package name using the package manager your distro uses and install it.
+> **Note** If you are not on a Debian-based distro, search for the package name using the package manager your distro uses and install it.
 
 #### MacOS
 	
@@ -54,7 +54,7 @@ sudo apt install eiskaltdcpp
     command -v brew
     ```
 
-  - If the output is like follwoing, then brew is installed!
+  - If the output is like the following, then brew is installed!
     ```sh
     ~> command -v brew
     /opt/homebrew/bin/brew
@@ -82,31 +82,31 @@ sudo apt install eiskaltdcpp
 4. Now Goto: `Connection` > `Advanced` > `TLS settings` and choose `Allow TLS`.<br>
 	<img width="700" alt="image" src="https://user-images.githubusercontent.com/86282911/223126546-7bbd64fd-e098-4427-91f0-0eaaf80c1ef1.png">
 
-5. In order to render the _welcome message_ aka `Message of The Day` properly you need to set a mono font for the client GUI.<br>
+5. To render the _welcome message_ aka `Message of The Day` properly you need to set a mono font for the client GUI.<br>
 	To do so Goto: `GUI` > `Fonts`, then select any __mono__ font available on your system.<br>
-	You will need to double click on the fonts to change them.<br>
+	You will need to double-click on the fonts to change them.<br>
 	<img width="700" alt="image" src="https://user-images.githubusercontent.com/86282911/223131317-2b5329b3-abda-48d3-b1bd-b0f531c4b841.png">
 	
 	> **Note** If you don't have any `mono` font installed on your system then refer to the section [Installing mono fonts](#installing-mono-fonts) for installing one, based on your platform
 
 6. Now click `Ok`. 
 
-7. Press the following key combination for quick connect dialog box, according to your platform.<br>
+7. Press the following key combination for the quick connect dialog box, according to your platform.<br>
    |Platform|Shortcut|
    |--------|---------|
    |Windows|`ctrl+n`|
    |Linux|`ctrl+n`|
    |MacOS|`cmd+n`|
 
-   Enter the current IP for DC++. At the time of writing this blog it is `10.105.12.22`. Press `Ok`.<br>
+   Enter the current IP for DC++. At the time of writing this blog, it is `10.105.12.22`. Press `Ok`.<br>
 	<img width="300" alt="image" src="https://user-images.githubusercontent.com/86282911/223131882-7e86be2e-d96e-44e3-ad4b-bca4be98b621.png">
    
-   > **Note** Refer [this page](https://wiki.metakgp.org/w/DC) for official updates on the Hub IP and MetaHub as a whole.
+   > **Note** Refer to [this page](https://wiki.metakgp.org/w/DC) for official updates on the Hub IP and MetaHub as a whole.
 
 8. You should now be connected to the hub and if the fonts are set properly you should see something like this. <br>
 	<img width="700" alt="image" src="https://user-images.githubusercontent.com/86282911/223134018-c1f1c1f2-4272-4611-bc39-d62fe42cbd2a.png">
 
-   (_Just focus on the Prompts and that you are connected, exact GUI of yours will be different since I customised mine to not to bleed my eyes_)
+   (_Just focus on the Prompts and that you are connected,  exact GUI of yours will be different since I customized mine to not to bleed my eyes_)
 
 
 ## How to share content
@@ -114,7 +114,7 @@ sudo apt install eiskaltdcpp
 It's not enough to just download content - to bring back the DC culture - everyone is encouraged to share their collection as well.<br>
 To share folder(s) follow the following steps:
 
-> **Warning** It is a must to mirror whatever you download, so you atleast have to share the folder in which you download content from the HUB.
+> **Warning** It is a must to mirror whatever you download, so you at least have to share the folder in which you download content from the HUB.
 
 1. Open Eiskalt DC++ & press the following keyboard shortcut to open its __preferences__ window according to your platform
    |Platform|Shortcut|
@@ -128,11 +128,11 @@ To share folder(s) follow the following steps:
 
 3. Now select the folder(s) you want to share. Keep the following things in mind:
    - You will need to click on `down arrows` to expand folders.
-   - You might need to __increase the width of Name column__ to be able to see names of the folders.
+   - You might need to __increase the width of the Name column__ to be able to see the names of the folders.
 
 ## How to download content
 
-1. `Right click` on the user you want to browse files for and select `Browse Files`.<br>
+1. `Right-click` on the user you want to browse files for and select `Browse Files`.<br>
    <img width="300" alt="image" src="https://user-images.githubusercontent.com/86282911/223689275-e472a0d7-72ab-437e-be6f-402184bacd47.png">
 
 2. Now you will be taken to the file explorer for the user's shared directory. Use the `Down Arrow` to expand the folders of your interest.
@@ -145,7 +145,7 @@ To share folder(s) follow the following steps:
 
 ## Some common issues
 
-1. You are connected to the hub and can also see the list of all connected users but when you try to browse the files for any user it keeps on connecting and finally nothing happens. This might be a result of multiple configurational and system issues. To fix them you are recommeded to follow the below practices:
+1. You are connected to the hub and can also see the list of all connected users but when you try to browse the files for any user it keeps on connecting and finally, nothing happens. This might be a result of multiple configurational and system issues. To fix them you are recommended to follow the below practices:
 
    - Allow all incoming connections for the client through your firewall - recommended for all platforms.
    - Always use the client in `Active mode`.<br>
@@ -155,21 +155,21 @@ To share folder(s) follow the following steps:
      Refer to the rules for the exact number. At the time of writing this documentation, the rules are:<br>
      <img width="400" alt="image" src="https://user-images.githubusercontent.com/86282911/223686051-32cd9e9c-adfd-4911-ab60-0d668f6bdd41.png">
 
-2. Nick already taken by another user, even if your nick was unique.<br>
+2. Nick was already taken by another user, even if your nick was unique.<br>
    <img width="500" alt="image" src="https://user-images.githubusercontent.com/86282911/223686661-ff00172a-2da2-47b2-8836-b77c4671d553.png">
 	
-   This happens when the connection with the hub is dropped abruptly. It can be due to multiple reasons like:
-	- Network was turned of abruptly.
+   This happens when the connection with the hub is dropped abruptly. It can be due to multiple reasons:
+	- Network was turned off abruptly.
 	- Network was changed abruptly.
 	
-   Due to which the connection packets remain alive and it appears to the hub that you are still connected, i.e., your previous connection wasn't closed properly.<br>
+   Due to this, the connection packets remain alive and it appears to the hub that you are still connected, i.e., your previous connection wasn't closed properly.<br>
 	
-   `FIX:` The only way to fix it is wait for at max 15 minutes so that the packets expire automatically and then you can connect to the hub normally. Usually they expire quite early but sometimes might take time so better have a walk outside you room, get some fresh air then try to connect to the hub again.
+   `FIX:` The only way to fix it is to wait for at max 15 minutes so that the packets expire automatically and then you can connect to the hub normally. Usually, they expire quite early but sometimes might take time so better have a walk outside your room, get some fresh air then try to connect to the hub again.
 
 ## Installing mono fonts
 
-This is completely an optional step based on personal preference. If you want to render the ASCII art for `METAHUB` to be rendered properly you will definetly need a mono font.<br>
-However there are many options available, for the sake of documenting the exact process we will be installing `hack-nerd-font` which comes with a _mono_ version of itself. To install it on your system of preference refer the links below
+This is completely an optional step based on personal preference. If you want to render the ASCII art for `METAHUB` to be rendered properly you will need a mono font.<br>
+However there are many options available, for the sake of documenting the exact process, we will be installing `hack-nerd-font` which comes with a _mono_ version of itself. To install it on your system of preference refer to the links below
 
 - [Windows](#installing-font-on-windows)
 - [Linux](#installing-font-on-linux)
@@ -202,7 +202,7 @@ However there are many options available, for the sake of documenting the exact 
 #### Installing font on MacOS
 
 - [Install Homebrew](https://brew.sh/) if not already installed.
-- Use the following commond to install the `hack-nerd-font`
+- Use the following command to install the `hack-nerd-font`
   ```sh
   brew install font-hack-nerd-font
   ```
