@@ -30,7 +30,7 @@ If you still don't understand a term, just Google it :)
 
 This guide explains how to install as well as use a C/C++ [compiler](https://en.wikipedia.org/wiki/Compiler) to run your code. The compiler used here is the [GCC](https://en.wikipedia.org/wiki/GNU_Compiler_Collection).
 
-To write and edit code, any text editor such as Notepad can be used, although, a [code editor](https://en.wikipedia.org/wiki/Source-code_editor) is recommended because of syntax highlighting, code completion and much more. Here, we will be setting up a popular cross-platform code editor - [Visual Studio Code](https://code.visualstudio.com/).
+To write and edit code, any text editor such as Notepad can be used, although, a [code editor](https://en.wikipedia.org/wiki/Source-code_editor) is recommended because of syntax highlighting, code completion, and much more. Here, we will be setting up a popular cross-platform code editor - [Visual Studio Code](https://code.visualstudio.com/).
 
 This guide has separate sections for different operating systems. Jump to the relevant section using the links below:
 - [Windows](#windows)
@@ -49,7 +49,7 @@ A [Terminal](https://en.wikipedia.org/wiki/Terminal_emulator) generally refers t
 ### Windows
 Here, the native Windows version of [GCC](https://en.wikipedia.org/wiki/GNU_Compiler_Collection) - called [MinGW](https://en.wikipedia.org/wiki/MinGW) - will be installed.
 
-There are quite a few methods to achieve this. We will be looking into two of them - one being the widely popular; using MinGW installer directly from its website - other bieng the simplest; using [Chocolatey package manager](https://chocolatey.org/).
+There are quite a few methods to achieve this. We will be looking into two of them - one being the most widely popular; using the MinGW installer directly from its website - other being the simplest; using [Chocolatey package manager](https://chocolatey.org/).
 
 Jump to the relevant method using the links below:
 - [Using MinGW Installer](#using-mingw-installer)
@@ -61,7 +61,7 @@ Jump to the relevant method using the links below:
 
 	<img width="500" alt="image" src="https://user-images.githubusercontent.com/86282911/199251856-1bd8f2ea-c745-4acc-987e-dc7114d13a95.png">
 
-2. Run the `.exe` file. A window titled "MinGW Installation Manager" will open in a few minutes. In the **Basic Setup** tab, right click the option named `mingw32-gcc-g++-bin` and click on `Mark for Install`.
+2. Run the `.exe` file. A window titled "MinGW Installation Manager" will open in a few minutes. In the **Basic Setup** tab, right-click the option named `mingw32-gcc-g++-bin` and click on `Mark for Install`.
 
 	<img width="500" alt="image" src="https://user-images.githubusercontent.com/86282911/199252340-1395bea4-481b-4c62-b561-0b3cee96d18c.png">
 
@@ -75,9 +75,9 @@ GCC is installed! Now we have to make it accessible by adding it to the [PATH](h
 
 	<img width="300" alt="image" src="https://user-images.githubusercontent.com/86282911/199253617-cad0a913-abb0-4aa9-820e-f733ee5e0d58.png">
 
-2. At the bottom "**System Variables**" panel, look for a Variable named "**PATH**" and double click on it.'
+2. At the bottom "**System Variables**" panel, look for a Variable named "**PATH**" and double-click on it.'
 3. Click the “New” button to add a new path to Windows PATH.
-4. Enter the Path of the folder which you installed the GCC to (by default, it's `C:\MinGW\bin`)
+4. Enter the Path of the folder to which you installed the GCC (by default, it's `C:\MinGW\bin`)
 
 	<img width="300" alt="image" src="https://user-images.githubusercontent.com/86282911/199254777-a4f0d1b3-3de6-4b69-afd4-06e7fac1835d.png">
 
@@ -90,23 +90,23 @@ To verify, type `gcc --version` in [Command Prompt](https://www.makeuseof.com/ta
 
 
 #### The easier way (via chocolatey)
-Chocolatey is a package manager for windows that makes installing applications a lot easier and automatable. As opposed to the long process we went through in the above way, via chocolatey the entire process of installing chocolatey can be reduced down to just 3 commands - executed in an [Administrator Powershell](https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/starting-windows-powershell?view=powershell-7.2):
+Chocolatey is a package manager for windows that makes installing applications a lot easier and more automatable. As opposed to the long process we went through in the above way, via chocolatey the entire process of installing chocolatey can be reduced to just 3 commands - executed in an [Administrator Powershell](https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/starting-windows-powershell?view=powershell-7.2):
 
 1. Install chocolatey with the instructions from their website: https://chocolatey.org/install
-	- Run `Get-ExecutionPolicy` in an administrator powershell. If it returns **Restricted**, then run `Set-ExecutionPolicy AllSigned`.
+	- Run `Get-ExecutionPolicy` in an administrator PowerShell. If it returns **Restricted**, then run `Set-ExecutionPolicy AllSigned`.
 	- Now run:
 		```sh
 		Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 		```
-		and wait for the installation of chocolatey to complete.
+		and wait for the installation of chocolatey to be complete.
 
-2. Close and reopen the admin powershell session.
+2. Close and reopen the admin PowerShell session.
 
 3. Run `choco install mingw` and type `A` to confirm the installation.
 
 	<img width="500" alt="image" src="https://user-images.githubusercontent.com/86282911/199414192-5f64e542-5925-4e39-b5e0-fba3b0b4cf0f.png">
 
-	You should see this if it suceeds
+	You should see this if it succeeds
 
 	<img width="500" alt="image" src="https://user-images.githubusercontent.com/86282911/199414239-f1f93354-2f6f-491e-b17b-69b473664751.png">
 
@@ -122,7 +122,7 @@ Most Linux [distributions](https://en.wikipedia.org/wiki/Linux_distribution) wil
 ```sh
 gcc --version
 ```
-If you get some output; NOT error, then it is installed.
+If you get some output; NOT an error, then it is installed.
 
 On [Ubuntu](https://en.wikipedia.org/wiki/Ubuntu) and other Debian-based distributions:
 Run the following commands in the [Terminal](https://itsfoss.com/open-terminal-ubuntu/):
@@ -143,11 +143,11 @@ Though [GCC](https://gcc.gnu.org/) "_appears_" to be installed in MacOS by defau
 
 #### Why bother?
 
-For the audience one of the main drawbacks on using clang can be not able to use `<bits/stdc++. h>`, for your work.
-To know about the differences in-depth - refer:
+For the audience one of the main drawbacks of using clang can be not able to use `<bits/stdc++. h>`, for your work.
+To know about the differences in-depth - refer to:
 
 - [From perspective of Apple; the developers of Clang](https://opensource.apple.com/source/clang/clang-23/clang/tools/clang/www/comparison.html#gcc)
-- [From neutral perspective](https://www.incredibuild.com/blog/gcc-vs-clang-battle-of-the-behemoths)
+- [From a neutral perspective](https://www.incredibuild.com/blog/gcc-vs-clang-battle-of-the-behemoths)
 
 #### Getting GCC installed on MacOS
 
@@ -158,7 +158,7 @@ To know about the differences in-depth - refer:
 		command -v brew
 		```
 
-	- If the output is like follwoing then brew is installed!
+	- If the output is like the following then brew is installed!
 		```sh
 		~> command -v brew
 		/opt/homebrew/bin/brew
@@ -168,7 +168,7 @@ To know about the differences in-depth - refer:
 
 	```sh
 	brew update
-	brew ugrade
+	brew upgrade
 	brew install gcc
 	```
 
@@ -177,7 +177,7 @@ To know about the differences in-depth - refer:
 	**Notice**: How the gcc is installed as `gcc-12` and `gcc` is still clang.
 
 3. Now, you can either use `gcc-12` instead of `gcc`.
-But if you want `gcc` to invoke GNU version of gcc instead of clang then execute the following lines in your terminal. Since, MacOS comes with
+But if you want `gcc` to invoke the GNU version of gcc instead of clang then execute the following lines in your terminal. Since MacOS comes with
 `zsh` by default we will be giving command for it only but if you have changed your shell then you must be equipped enough to do the following steps on that shell too - Right?
 
 	```sh
@@ -190,12 +190,12 @@ But if you want `gcc` to invoke GNU version of gcc instead of clang then execute
 
 <img width="1268" alt="image" src="https://user-images.githubusercontent.com/86282911/199091042-cd397043-5fa4-4745-8863-aa61fc1b107c.png">
 
-If you are using MacOS ventura and facing this issue - which means it's not fixed yet - no problem, then read the following issue/discussion to solve it!
+If you are using MacOS Ventura and facing this issue - which means it's not fixed yet - no problem, then read the following issue/discussion to solve it!
 
 - https://github.com/Homebrew/homebrew-core/issues/113968
 
 **Yes. You are going to read all of that, try to understand; try to fix. Repeat until you succeed!**
-You have to start self-learning sometime later, why not start now?
+You have to start self-learning sometime later, so why not start now?
 
 ***
 
@@ -203,7 +203,7 @@ You have to start self-learning sometime later, why not start now?
 
 Follow these steps to compile your `.c` file manually.
 
-1. Create a file with name `first_c_program.c` with following content in it and then save it.
+1. Create a file with the name `first_c_program.c` with the following content in it and then save it.
 	```c
 	#include <stdio.h>
 
@@ -220,7 +220,7 @@ Follow these steps to compile your `.c` file manually.
 
 	<img width="533" alt="image" src="https://user-images.githubusercontent.com/86282911/199065183-33f31329-cb4d-48d9-9639-b9d65a1d7df7.png">
 
-	For windows users the command to run will be following, above works for Linux & MacOS only.
+	For Windows users, the command to run will be the following, the above works for Linux & MacOS only.
 
 	```sh
 	.\filename.exe
@@ -229,7 +229,7 @@ Follow these steps to compile your `.c` file manually.
 ***
 
 ### Setting Up VS Code
-[Visual Studio Code](https://code.visualstudio.com/) is a free and open source code editor that is customizable through [extensions](https://marketplace.visualstudio.com/VSCode). The [C/C++ extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) can be used for compiling and running C/C++ code along with many more features.
+[Visual Studio Code](https://code.visualstudio.com/) is a free and open-source code editor that is customizable through [extensions](https://marketplace.visualstudio.com/VSCode). The [C/C++ extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) can be used for compiling and running C/C++ code along with many more features.
 
 #### Installing
 1. Open VS Code
@@ -238,12 +238,12 @@ Follow these steps to compile your `.c` file manually.
 
 	<img width="400" alt="image" src="https://user-images.githubusercontent.com/86282911/199403927-ff784c57-ccd4-4cd2-a07b-5e043f28c876.png">
 
-Once the extension is installed, creating or opening any `.c` or `.cpp` file will have syntax highlighting, code completion and other features.
+Once the extension is installed, creating or opening any `.c` or `.cpp` file will have syntax highlighting, code completion, and other features.
 
 <img width="700" alt="image" src="https://user-images.githubusercontent.com/86282911/199404180-38e125a6-139a-42c8-bde2-b367d889440c.png">
 
 #### Compiling
-In order to compile the code, open a file and run `Terminal > Build Task` from the main menu or press `Ctrl + Shift + B`.
+To compile the code, open a file and run `Terminal > Build Task` from the main menu or press `Ctrl + Shift + B`.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/86282911/199404707-95b1ad79-b55c-474f-b68c-4e782513a675.png">
 
@@ -277,7 +277,7 @@ Depending on your OS, we suggest different code runners. Hop into the section of
 
 #### Windows 11
 
-> You are suggested to use [code-runner](#linux-and-macos) using [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) instead of using this buggy `.run` extension which you will be installing in this section ahead - which is shared just as an alternative which is relatively easy to setup.
+> You are suggested to use [code-runner](#linux-and-macos) using [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) instead of using this buggy `.run` extension which will be installed in this section ahead - which is shared just as an alternative which is relatively easy to setup.
 
 1. Click on the extensions icon (<img width="20" alt="image" src="https://user-images.githubusercontent.com/86282911/201152366-5c50d509-8058-4e14-ac59-75697f2bcb30.png">).
 2. Search for `code runner`.
@@ -287,7 +287,7 @@ Depending on your OS, we suggest different code runners. Hop into the section of
 
 #### Linux and MacOS
 
-For simplicity and automating a few steps for a list of languages you can try [code-runner](https://github.com/proffapt/code-runner).
+For simplicity and to automate a few steps for a list of languages you can try [code-runner](https://github.com/proffapt/code-runner).
 <img width="603" alt="image" src="https://user-images.githubusercontent.com/86282911/199088479-26cce835-c9bc-414d-9bc4-5de188145c92.png">
 
 ##### Installation
@@ -297,16 +297,16 @@ Copy and paste the following command in your terminal and wait for the final mes
 curl https://raw.githubusercontent.com/proffapt/code-runner/main/setup.sh | /bin/bash
 ```
 
-Can help in following ways:
-- Just one command to compile and execute the compiled file: `run filneame.extension`.
-- Cleans compiled binary by default. So, that you don't submit binary instead of `.c` file in your assignments.
+Can help in the following ways:
+- Just one command to compile and execute the compiled file: `run filename.extension`.
+- Cleans compiled binary by default. So, that you don't submit binary instead of a `.c` file in your assignments.
 - Detects the version of python to be used ( accuracy of 95% ).
 - Can be used to create a file with _spaces_ in its name ( vs-code runner extension lacks this )
-- Can be used to executea a file in different directory ( vs-code runner extension lacks this; and limits some functionalities )
+- Can be used to execute a file in a different directory ( vs-code runner extension lacks this; and limits some functionalities )
 - Inbuilt debugger support.
 - Integrates with [NeoVIM](https://neovim.io/) and [VS-CODE](https://code.visualstudio.com/) - steps in the documentation of the tool.
 
-> And many more, read the documntation and code for thorough understanding at https://github.com/proffapt/code-runner.
+> And many more, read the documentation and code for a thorough understanding at https://github.com/proffapt/code-runner.
 
 ***
 
@@ -314,8 +314,8 @@ Can help in following ways:
 
 #### **DO NOT GUESS** how a piece of software might work.
 
-When using a tool for first time, you **CAN'T** and **MUSTN'T** guess how it works! Beginners often make this mistake and waste a lot of their time and of others too; without even searching or reading the docs!<br>
-Rather read the documentation / help for that program or just simply search for whatever you wanna achieve with that tool.
+When using a tool for the first time, you **CAN'T** and **MUSTN'T** guess how it works! Beginners often make this mistake and waste a lot of their time and of others too; without even searching or reading the docs!<br>
+Rather read the documentation/help for that program or just simply search for whatever you wanna achieve with that tool.
 
 > [Read The Fucking Manual - RTFM](https://en.wikipedia.org/wiki/RTFM#:~:text=RTFM%20is%20an%20initialism%20and,forum%2C%20software%20documentation%20or%20FAQ.)
 
@@ -326,9 +326,9 @@ The basic idea behind it is very simple:
 <img width="150" alt="image" align="right" src="https://user-images.githubusercontent.com/86282911/199060464-2dde3274-68dc-42e8-bc3d-e0e561d6e04b.png">
 
 1. Read the error carefully and try to understand it.
-2. Phrase your problem / goal.
-3. Search it on your favourite search engine **before asking in groups**.
-4. Either you will get the solution, if not then ask in groups / forums.
+2. Phrase your problem/goal.
+3. Search it on your favorite search engine **before asking in groups**.
+4. Either you will get the solution, if not then ask in groups/forums.
 
 ***
 
