@@ -1,7 +1,7 @@
 [^1]: It is the path to the `.pem` file which you downloaded just before deploying the VM.
-[^2]: Name to the user given while creatng the virtual machine.
+[^2]: Name of the user given while creating the virtual machine.
 [^3]: Public IP address of the machine.
-[^4]: Name of the client you specified to the script.
+[^4]: Name of the client you specified in the script.
 
 # Setup OpenVPN Server on Azure
 
@@ -30,7 +30,7 @@
 ### Step 2: Create an EC2 instance
 
 - Goto [Azure portal](https://portal.azure.com/#home) 
-- Click on `ham-burger` menu > `Create a resource` > `Compute` > `Ubuntu Server 22.04 LTS`. Fill in the necessary details in the `Basics` section.<br>
+- Click on the `hamburger` menu > `Create a resource` > `Compute` > `Ubuntu Server 22.04 LTS`. Fill in the necessary details in the `Basics` section.<br>
   <img width="550" alt="image" src="https://user-images.githubusercontent.com/86282911/221249596-69fbc2bb-61fc-40c3-82a8-931a99a49885.png">
   <img width="375" alt="image" src="https://user-images.githubusercontent.com/86282911/221250228-8a9ace9d-bc1e-4587-9a5b-bc3529e331a9.png">
   <img width="930" alt="image" src="https://user-images.githubusercontent.com/86282911/221250519-a08d12a1-2adb-4817-bbe8-df8e4cc4c1ba.png">
@@ -52,14 +52,14 @@
 	  Using SSH keys
       </summary>
 	
-      - Select `SSH public key` as the Authentication Method and fill-in the required fields.<br>
+      - Select `SSH public key` as the Authentication Method and fill in the required fields.<br>
         <img width="450" alt="image" src="https://user-images.githubusercontent.com/86282911/222965735-37722163-583e-433b-8629-2a1ca65acebd.png">
 
       - Choose **HTTPS(443)** in `Select inbound ports`.<br>
         <img width="450" alt="image" src="https://user-images.githubusercontent.com/86282911/221342161-4e366833-a82c-4cf7-9246-7220ab2465b8.png">
   
-      - Leave rest of the settings as default in other sections and click `Review+Create`.
-      - Now you will be prompted to `Generate a new key pair`, select `Download privae key and create Resource`. This step will download a `.pem` file on to your local machine.<br>
+      - Leave the rest of the settings as default in other sections and click `Review+Create`.
+      - Now you will be prompted to `Generate a new key pair`, select `Download private key and create Resource`. This step will download a `.pem` file onto your local machine.<br>
         <img width="450" alt="image" src="https://user-images.githubusercontent.com/86282911/221342181-ac62d29d-9727-4b57-a6c8-57082f2ce1e0.png"><br>
         <img width="450" alt="image" src="https://user-images.githubusercontent.com/86282911/221342234-1336e5ec-5e9c-431e-9649-2bb1c5cb144f.png">
 
@@ -70,13 +70,13 @@
 	  Using password
       </summary>
 	
-      - Select `Password` as the Authentication Method and fill-in the required fields.<br>
+      - Select `Password` as the Authentication Method and fill in the required fields.<br>
         <img width="450" alt="image" src="https://user-images.githubusercontent.com/86282911/222967213-92d8fc30-153d-40dd-84b4-879a8c112a97.png">
 
       - Choose **HTTPS(443)** in `Select inbound ports`.<br>
         <img width="450" alt="image" src="https://user-images.githubusercontent.com/86282911/221342161-4e366833-a82c-4cf7-9246-7220ab2465b8.png">
 
-      - Leave rest of the settings as default in other sections and click `Review+Create`.
+      - Leave the rest of the settings as default in other sections and click `Review+Create`.
       </details>
 
 
@@ -147,7 +147,7 @@ Click on the following links to read about the steps for the client of your inte
 
   > **Note**
 
-  Afore-mentioned method has a long command to type in, the recommended method will not be an alias but utilising somehing which SSH itself provides us.<br>
+  The afore-mentioned method has a long command to type in, the recommended method will not be an alias but utilize something which SSH itself provides us.<br>
 We can add the config details to the ssh config file (`~/.ssh/config`).	The format is given below, replace the content inside `<_>` with your values and save it into the config file.<br>
 **Then you can ssh directly by using `ssh MyAzure`**.
 
@@ -159,7 +159,7 @@ We can add the config details to the ssh config file (`~/.ssh/config`).	The form
  	  IdentitiesOnly yes
   ```
 
-  > **Note** make sure you have set correct permissions on the private key or else you will get an error during ssh. You can fix this by changing the permissions using the following command:
+  > **Note** make sure you have set the correct permissions on the private key or else you will get an error during ssh. You can fix this by changing the permissions using the following command:
 
   ```sh
   chmod 400 path/to/privatekey
@@ -181,9 +181,9 @@ We can add the config details to the ssh config file (`~/.ssh/config`).	The form
 
 ### Step 4: Setup OpenVPN Access Server
 
-After we have ssh'ed into the machine, we have to setup the OpenVPN Access Server. 
+After we have ssh'ed into the machine, we have to set up the OpenVPN Access Server. 
 
-- Before that it's a good practice to update and upgrade your system via
+- Before that, it's a good practice to update and upgrade your system via
   ```sh
   sudo apt update
   sudo apt upgrade
@@ -192,13 +192,13 @@ After we have ssh'ed into the machine, we have to setup the OpenVPN Access Serve
   ```sh
   wget https://git.io/vpn -O openvpn-install.sh && sudo bash openvpn-install.sh
   ```
-  It will download and execute a script which automates openvpn server configuration.
-- Keep in mind to update following options during the setup process & leave the rest on their default state:
+  It will download and execute a script that automates openvpn server configuration.
+- Keep in mind to update the following options during the setup process & leave the rest in their default state:
   - `IP address`: Your _Public IP_ for the azure machine.
   - `UDP or TCP`: Enter 2 for __TCP__ as __UDP ports are blocked on campus network__.
   - `PORT`: __443__
   - `DNS RESOLVER`: Enter 4 for __OpenDNS__.
-  - `CLIENT`: One configuration for one client/device. Name it like pc, mobile etc.
+  - `CLIENT`: One configuration for one client/device. Name it like pc, mobile, etc.
 - The `.ovpn` file will be stored inside `/root` directory, copy it into your user's home directory using the following command
   ```sh
   sudo cp /root/client_name.ovpn ~/
@@ -209,18 +209,18 @@ After we have ssh'ed into the machine, we have to setup the OpenVPN Access Serve
 
 #### Configuration for Gaming
 
-Use `TCP_NODELAY` option if you are planning to use this vpn for gaming. Execute the following command on the remote VPN server
+Use the `TCP_NODELAY` option if you are planning to use this VPN for gaming. Execute the following command on the remote VPN server
 ```sh
 sudo echo "tcp-nodelay" | sudo tee -a /etc/openvpn/server.conf
 ```
-Now restart openvpn service using 
+Now restart the openvpn service using 
 ```sh
 sudo systemctl restart openvpn.service && sudo systemctl restart openvpn@server.service
 ```
 
 ### Step 5: Download ovpn files
 
-Now we have to transfer he `.ovpn` files generaed on the remote server to our local machine. The steps to achieve this are different for `*nix` (Linux or MacOS) & Windows, refer the following links to read about the steps for your platform of interest:
+Now we have to transfer the `.ovpn` files generated on the remote server to our local machine. The steps to achieve this are different for `*nix` (Linux or MacOS) & Windows, refer to the following links to read about the steps for your platform of interest:
 - [Windows](#windows)
 - [Linux & MacOS](#linux--macos)
 
@@ -281,10 +281,10 @@ Now we have to transfer he `.ovpn` files generaed on the remote server to our lo
   - Press `Login` then `YES`.
   </details>
   
-- Select and download all the `.ovpn` files you creaed which will be shown on the interface.<br>
+- Select and download all the `.ovpn` files you created which will be shown on the interface.<br>
   <img width="180" alt="image" src="https://user-images.githubusercontent.com/86282911/221343162-03ed5396-6637-4ecb-9b21-433a3799bb1b.png">
 
-- Now shutdown the `WinSCP session`
+- Now shut down the `WinSCP session`
 
 #### Linux & MacOS
 
@@ -293,7 +293,7 @@ Now we have to transfer he `.ovpn` files generaed on the remote server to our lo
 	Using SSH keys
 </summary>
 	
-Run the following command, the key will be downloaded in `Downloads` directory.
+Run the following command, the key will be downloaded in the `Downloads` directory.
 ```sh
 scp -i path/to/privatekey user@host_address:client_name.ovpn ~/Downloads/
 ```
@@ -306,38 +306,38 @@ scp -i path/to/privatekey user@host_address:client_name.ovpn ~/Downloads/
 	Using Password
 </summary>
 	
-Run the following command, the key will be downloaded in `Downloads` directory after you enter the correct password set by you earlier.
+Run the following command, the key will be downloaded in the `Downloads` directory after you enter the correct password set by you earlier.
 ```sh
 scp user@host_address:client_name.ovpn ~/Downloads/
 ```
 > user[^2] • host_address[^3] • client_name[^4]
 </details>
 
-To _start/stop/check_ status of open-vpn server use `systemctl`:
+To _start/stop/check_ status of the OpenVPN server use `systemctl`:
 ```sh
 sudo systemctl start/stop/status openvpn@server.service
 ```
 
-> **Android**: Follow either of the afore-mentioned methods and then transfer the downloaded `.ovpn` file to your android device via Telegram/Bluetooth/Mail or whatever to your android device.
+> **Android**: Follow either of the aforementioned methods and then transfer the downloaded `.ovpn` file to your Android device via Telegram/Bluetooth/Mail or whatever to your android device.
 
 ### Step 6: Connecting to the VPN on client devices
 
-* **Android**: Download [Open VPN Connect](https://play.google.com/store/apps/details?id=net.openvpn.openvpn&hl=en_IN&gl=US) app from Play Store. Open the app and after going through the first screen, goto **Files** tab, there import the `.ovpn` file and connect.
+* **Android**: Download [Open VPN Connect](https://play.google.com/store/apps/details?id=net.openvpn.openvpn&hl=en_IN&gl=US) app from Play Store. Open the app and after going through the first screen, go to **Files** tab, there import the `.ovpn` file, and connect.
     
 * **Linux**: In most of the distros, you can go to the network manager and import the `.ovpn` file. If not then install OpenVPN with `sudo apt install openvpn` and connect using `sudo openvpn --config /path/to/config.ovpn`.
 
 * **MacOS**: You can either download the _GUI tool_ [tunnelblick](https://tunnelblick.net/downloads.html) for importing the `.ovpn` file or download the _CLI tool_ for openvpn via [MacPorts](https://www.macports.org/install.php) or [HomeBrew](https://brew.sh/) using `sudo ports install openvpn` and `brew install openvpn` respectively; then execute `sudo openvpn --config /path/to/config.ovpn`.
     
-* **Windows**: Download the official [OpenVPN Connect client for Windows](https://openvpn.net/client-connect-vpn-for-windows/), import the `.ovpn` file and toggle it ON to finally connect - [video guide](https://www.youtube.com/watch?v=P2SroQ_pzPU).
+* **Windows**: Download the official [OpenVPN Connect client for Windows](https://openvpn.net/client-connect-vpn-for-windows/), import the `.ovpn` file, and toggle it ON to finally connect - [video guide](https://www.youtube.com/watch?v=P2SroQ_pzPU).
 
 ### Step 7: Budget Control
 
-> **Warning** This is a very important step, to ensure long term usaability of your credits
+> **Warning** This is a very important step, to ensure the long-term usability of your credits
 
 - Use only one instance.
-- Bandwidth is _**free upto $100 credits**_, so its better to not to waste resource on the VPN.
+- Bandwidth is _**free up to $100 credits**_, so it's better not to waste resources on the VPN.
 
-> **Note** If in any case you have to stop an instance forcibly, do it; to be on the safer side.
+> **Note** If in any case, you have to stop an instance forcibly, do it; to be on the safer side.
 
 ***
 
