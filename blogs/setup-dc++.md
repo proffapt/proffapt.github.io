@@ -89,7 +89,7 @@ sudo apt install eiskaltdcpp
 	
 	> **Note** If you don't have any `mono` font installed on your system then refer to the section [Installing mono fonts](#installing-mono-fonts) for installing one, based on your platform
 
-6. Now press `Ok`. 
+6. Now click `Ok`. 
 
 7. Press the following key combination for quick connect dialog box, according to your platform.<br>
    |Platform|Shortcut|
@@ -147,13 +147,13 @@ To share folder(s) follow the following steps:
 
 1. You are connected to the hub and can also see the list of all connected users but when you try to browse the files for any user it keeps on connecting and finally nothing happens. This might be a result of multiple configurational and system issues. To fix them you are recommeded to follow the below practices:
 
-  - Allow all incoming connections for the client through your firewall - recommended for all platforms.
-  - Always use the client in `Active mode`.<br>
-    To do so, Goto: `Preferences` > `Connection` > `Connection` then select `Active Mode` and restart the client.<BR>
-    <img width="700" alt="image" src="https://user-images.githubusercontent.com/86282911/223679604-5e05c4df-e0e0-4cfb-b6c1-e4c688e3ebc7.png">
-  - Make sure you meet the minimum sharing requirement to be able to browse and download content from other users.<br> 
-    Refer to the rules for the exact number. At the time of writing this documentation, the rules are:<br>
-    <img width="400" alt="image" src="https://user-images.githubusercontent.com/86282911/223686051-32cd9e9c-adfd-4911-ab60-0d668f6bdd41.png">
+   - Allow all incoming connections for the client through your firewall - recommended for all platforms.
+   - Always use the client in `Active mode`.<br>
+     To do so, Goto: `Preferences` > `Connection` > `Connection` then select `Active Mode` and restart the client.<BR>
+     <img width="700" alt="image" src="https://user-images.githubusercontent.com/86282911/223679604-5e05c4df-e0e0-4cfb-b6c1-e4c688e3ebc7.png">
+   - Make sure you meet the minimum sharing requirement to be able to browse and download content from other users.<br> 
+     Refer to the rules for the exact number. At the time of writing this documentation, the rules are:<br>
+     <img width="400" alt="image" src="https://user-images.githubusercontent.com/86282911/223686051-32cd9e9c-adfd-4911-ab60-0d668f6bdd41.png">
 
 2. Nick already taken by another user, even if your nick was unique.<br>
    <img width="500" alt="image" src="https://user-images.githubusercontent.com/86282911/223686661-ff00172a-2da2-47b2-8836-b77c4671d553.png">
@@ -163,6 +163,7 @@ To share folder(s) follow the following steps:
 	- Network was changed abruptly.
 	
    Due to which the connection packets remain alive and it appears to the hub that you are still connected, i.e., your previous connection wasn't closed properly.<br>
+	
    `FIX:` The only way to fix it is wait for at max 15 minutes so that the packets expire automatically and then you can connect to the hub normally. Usually they expire quite early but sometimes might take time so better have a walk outside you room, get some fresh air then try to connect to the hub again.
 
 ## Installing mono fonts
@@ -179,10 +180,10 @@ However there are many options available, for the sake of documenting the exact 
 1. Download a [Nerd Font](http://nerdfonts.com/) - recommended [Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Hack.zip).
 2. Extract the downloaded zip file.
 3. To install all of them simultaneously, you first need to select them all. To do so, click the first font on the list, hold the `Shift` key, and click the last font. You can also drag to select them if you want. As long as they’re all selected, it doesn’t matter how you do it. It should look like this.:<br>
-   <img width="600" alt="image" src="https://user-images.githubusercontent.com/86282911/223692778-637da01b-03ba-4e26-83d2-085d6ca0c4f6.png">
+   <img width="350" alt="image" src="https://user-images.githubusercontent.com/86282911/223692778-637da01b-03ba-4e26-83d2-085d6ca0c4f6.png">
 
 4. Next, `right-click` on the name of any of the font files. If you have multiple user accounts on your PC, you might want to click `Install for All Users`. Otherwise, just click `Install`.<br>
-   <img width="600" alt="image" src="https://user-images.githubusercontent.com/86282911/223693099-98f7f279-4540-470a-8d17-0bbe3a219f07.png">
+   <img width="350" alt="image" src="https://user-images.githubusercontent.com/86282911/223693099-98f7f279-4540-470a-8d17-0bbe3a219f07.png">
 
 5. If you already installed some of the fonts, you’ll get a popup warning you about it. Click `Yes` and let it proceed.
    <img width="350" alt="image" src="https://user-images.githubusercontent.com/86282911/223693473-433f1958-ffe4-4768-8c11-9f54fefd06a6.png">
